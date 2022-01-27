@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 11:19:51
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-26 11:53:37
+ * @Last Modified time: 2022-01-27 12:00:18
  *
  * @package air-setting-groups
  */
@@ -38,7 +38,7 @@ function register_cpt() {
     'exclude_from_search' => false,
     'show_ui'             => true,
     'show_in_menu'        => true,
-    'show_in_rest'        => false,
+    'show_in_rest'        => true,
     'rewrite'             => false,
     'supports'            => [ 'title', 'revisions' ],
     'taxonomies'          => [],
