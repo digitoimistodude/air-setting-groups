@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 10:56:18
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-28 11:57:46
+ * @Last Modified time: 2022-01-28 12:06:16
  *
  * Plugin Name: Air setting groups
  * Description:
@@ -28,7 +28,7 @@ function get_plugin_version() {
 
 function get_prefix( $hyphens = false ) {
   $prefix = 'air_setting_groups';
-  $prefix = apply_filters( 'air_setting_groups_set_prefix', $prefix );
+  $prefix = apply_filters( 'air_setting_groups_prefix', $prefix );
 
   if ( $hyphens ) {
     $prefix = str_replace( '_', '-', $prefix );

@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 13:11:12
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-27 16:26:17
+ * @Last Modified time: 2022-01-28 12:15:23
  *
  * @package air-setting-groups
  */
@@ -16,14 +16,15 @@ function init_settings_page_acf_location_rule() {
   if ( ! function_exists( 'acf_register_location_type' ) || empty( $group_post_ids ) ) {
     return;
   }
+
   acf_register_location_type( __NAMESPACE__ . '\ACF_Location_Custom_Settings' );
-}
+} // end init_settings_page_acf_location_rule
 
 class ACF_Location_Custom_Settings extends \ACF_Location {
   public function initialize() {
-      $this->name = get_prefix();
-      $this->label = __( 'Custom Settings Page', 'air-setting-groups' ); // phpcs:ignore
-      $this->category = 'page';
+    $this->name = get_prefix();
+    $this->label = __( 'Asetusryhmä', get_prefix() ); // phpcs:ignore
+    $this->category = 'page';
   }
 
   /**
@@ -43,22 +44,19 @@ class ACF_Location_Custom_Settings extends \ACF_Location {
     }
 
     return false;
-  }
+  } // end match
 
   public static function get_operators( $rule ) {
     return array(
-      '==' => __( 'is equal to', 'air-setting-groups' ), // phpcs:ignore
+      '==' => __( 'is equal to', 'acf' ), // phpcs:ignore
     );
-  }
+  } // end get_operators
 
   /**
    * Get the titles of custom settings for ACF field groups.
    */
   public function get_values( $rule ) {
-
-    // TODO
     $settings = get_custom_setting_config();
-
     $choices = [];
 
     foreach ( $settings as $key => $data ) {
@@ -66,7 +64,7 @@ class ACF_Location_Custom_Settings extends \ACF_Location {
     }
 
     return $choices;
-  }
+  } // end get_values
 }
 
 /**
@@ -74,7 +72,6 @@ class ACF_Location_Custom_Settings extends \ACF_Location {
  */
 function get_all_custom_setting_pages_for_key( $key ) {
   $setting_group_posts = get_custom_setting_config();
-
   $original_setting_post = null;
 
   foreach ( $setting_group_posts as $group => $data ) {
@@ -95,4 +92,4 @@ function get_all_custom_setting_pages_for_key( $key ) {
   }
 
   return [ $original_setting_post ];
-}
+} // end get_all_custom_setting_pages_for_key

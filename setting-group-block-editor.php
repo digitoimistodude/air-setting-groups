@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 15:31:41
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-28 11:49:05
+ * @Last Modified time: 2022-01-28 12:13:14
  *
  * @package air-setting-groups
  */
@@ -30,7 +30,7 @@ function air_setting_groups_editor_support_for_setting_group_post() {
 
   if ( ! use_block_editor_in_custom_setting_group( $post_id ) ) {
     remove_post_type_support( get_prefix( true ), 'editor' );
-    }
+  }
 } // end air_setting_groups_editor_support_for_setting_group_post
 
 /**
@@ -42,6 +42,7 @@ function use_block_editor_in_custom_setting_group( $post_id ) {
   }
 
   $setting_group_post_ids = get_custom_setting_config();
+  $found = false;
 
   foreach ( $setting_group_post_ids as $key => $data ) {
     if ( false === pll_get_post( $data['id'] ) || null === pll_get_post( $data['id'] ) ) {
@@ -51,7 +52,6 @@ function use_block_editor_in_custom_setting_group( $post_id ) {
     $setting_group_post_ids[ $key ]['id'] = pll_get_post( $data['id'] );
   }
 
-  $found = false;
   foreach ( $setting_group_post_ids as $data ) {
     if ( $data['id'] !== $post_id ) {
       continue;
