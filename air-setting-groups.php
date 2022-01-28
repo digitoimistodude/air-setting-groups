@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 10:56:18
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-28 11:33:22
+ * @Last Modified time: 2022-01-28 11:57:46
  *
  * Plugin Name: Air setting groups
  * Description:
@@ -28,6 +28,7 @@ function get_plugin_version() {
 
 function get_prefix( $hyphens = false ) {
   $prefix = 'air_setting_groups';
+  $prefix = apply_filters( 'air_setting_groups_set_prefix', $prefix );
 
   if ( $hyphens ) {
     $prefix = str_replace( '_', '-', $prefix );
@@ -80,7 +81,6 @@ add_action( 'plugins_loaded', function() {
  */
 include plugin_dir_path( __FILE__ ) . '/setting-group-block-editor.php';
 add_action( 'admin_init', __NAMESPACE__ . '\air_setting_groups_editor_support_for_setting_group_post', 99, 1 );
-// add_filter( 'use_block_editor_for_post', __NAMESPACE__ . '\air_setting_groups_use_block_editor_in_custom_setting_group', 10, 2 );
 
 /**
  * Get custom setting function
