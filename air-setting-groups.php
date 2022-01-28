@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 10:56:18
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-27 16:26:30
+ * @Last Modified time: 2022-01-28 11:33:22
  *
  * Plugin Name: Air setting groups
  * Description:
@@ -36,6 +36,9 @@ function get_prefix( $hyphens = false ) {
   return $prefix;
 } //end get_prefix
 
+/**
+ * Gets custom settings array from theme settings.
+ */
 function get_custom_setting_config( $post_ids = [] ) {
   if ( ! isset( THEME_SETTINGS['custom_settings'] ) ) {
     return $post_ids;
@@ -44,20 +47,24 @@ function get_custom_setting_config( $post_ids = [] ) {
   return wp_parse_args( THEME_SETTINGS['custom_settings'], $post_ids );
 } // end get_custom_setting_config
 
+
+/**
+ * Add setting group CPT to polylang allow multilingual settings.
+ */
 add_filter( 'pll_get_post_types', function( $post_types, $is_settings ) {
   $post_types[ get_prefix( true ) ] = get_prefix( true );
   return $post_types;
 }, 10, 2 );
 
 /**
- * Setting cpt registering
+ * Register CPT.
  */
 include plugin_dir_path( __FILE__ ) . '/cpt-settings.php';
 add_action( 'init', __NAMESPACE__ . '\register_cpt' );
 
 /**
- * ACF
- * Running in plugins_loaded action to make sure that ACF is activated
+ * ACF - Adds custom location rule to ACF
+ * Running in plugins_loaded action to make sure that ACF is activated.
  */
 add_action( 'plugins_loaded', function() {
   if ( ! class_exists( 'ACF_Location' ) ) {
@@ -73,6 +80,9 @@ add_action( 'plugins_loaded', function() {
  */
 include plugin_dir_path( __FILE__ ) . '/setting-group-block-editor.php';
 add_action( 'admin_init', __NAMESPACE__ . '\air_setting_groups_editor_support_for_setting_group_post', 99, 1 );
-add_filter( 'use_block_editor_for_post', __NAMESPACE__ . '\air_setting_groups_use_block_editor_in_custom_setting_group', 10, 2 );
+// add_filter( 'use_block_editor_for_post', __NAMESPACE__ . '\air_setting_groups_use_block_editor_in_custom_setting_group', 10, 2 );
 
+/**
+ * Get custom setting function
+ */
 include plugin_dir_path( __FILE__ ) . '/get-setting.php';

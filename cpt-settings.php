@@ -3,7 +3,7 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 11:19:51
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-27 12:00:18
+ * @Last Modified time: 2022-01-28 11:23:37
  *
  * @package air-setting-groups
  */
@@ -40,7 +40,7 @@ function register_cpt() {
     'show_in_menu'        => true,
     'show_in_rest'        => true,
     'rewrite'             => false,
-    'supports'            => [ 'title', 'revisions' ],
+    'supports'            => [ 'title', 'revisions', 'editor' ],
     'taxonomies'          => [],
   ];
 
