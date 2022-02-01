@@ -10,7 +10,7 @@ Like this.
 ```php
 'custom_settings' => [
     'your-custom-setting' => [
-      'id' => Your custom setting post id,
+      'id' => '{YOUR POST ID}',
       'title' => 'Your custom setting',
       'block-editor' => true,
     ],
@@ -23,11 +23,11 @@ Now that you have registered your custom setting group, you can find it in ACF f
 
 ## Functions and hooks
 
-`get_plugin_version` Returns the version of the plugin.
+`get_plugin_version()` Returns the version of the plugin.
 
 `get_prefix()` Returns the prefix of the CPT. If given argument `true`, returns prefix with hyphens instead of underscores.
 
-`get_custom_setting_config` Returns all of the registered custom setting groups in `functions.php`
+`get_custom_setting_config()` Returns all of the registered custom setting groups in `functions.php`
 
 `get_custom_setting( 'key of your ACF field', 'key of your custom setting group' )` Gets you the value of a specific field of a specific setting group.
 
