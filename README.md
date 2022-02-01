@@ -2,7 +2,7 @@
 
 ## Registering your custom setting groups
 
-To begin using your custom setting groups, you need to create a custom setting group post. You can do this in the admin panel window that the plugin creates automatically.
+To begin using your custom setting groups, you need to create a custom setting group post. You can do this in the admin panel CPT that the plugin creates automatically.
 
 After the setting group is created, it needs to be registered in `functions.php`.
 
