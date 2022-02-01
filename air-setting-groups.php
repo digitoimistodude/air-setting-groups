@@ -3,14 +3,14 @@
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 10:56:18
  * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-28 12:06:16
+ * @Last Modified time: 2022-02-01 14:40:51
  *
  * Plugin Name: Air setting groups
- * Description:
+ * Description: Provides a way to store custom settings in CPT and receive those with field id and setting group key.
  * Plugin URI: https://dude.fi
  * Author: Digitoimisto Dude Oy
  * Author URI: https://dude.fi
- * Version: 0.1.0
+ * Version: 1.0.0
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Network: false
@@ -23,7 +23,7 @@ namespace Air_Setting_Groups;
 defined( 'ABSPATH' ) || exit;
 
 function get_plugin_version() {
-  return 010;
+  return 100;
 } //end get_plugin_version
 
 function get_prefix( $hyphens = false ) {

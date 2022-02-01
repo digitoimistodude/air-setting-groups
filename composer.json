@@ -1,0 +1,24 @@
+{
+  "name": "digitoimistodude/air-setting-groups",
+  "type": "wordpress-plugin",
+  "description": "Provides a way to store custom settings in CPT and receive those with field id and setting group key.",
+  "homepage": "https://github.com/digitoimistodude/air-setting-groups",
+  "keywords": [
+    "wordpress",
+    "plugin"
+  ],
+  "license": "GPL-3.0+",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Elias Kautto",
+      "email": "elias@dude.fi",
+      "homepage": "https://github.com/eliaskau"
+    },
+    {
+      "name": "Timi Wahalahti",
+      "email": "timi@dude.fi",
+      "homepage": "https://github.com/timiwahalahti"
+    }
+  ]
+}
