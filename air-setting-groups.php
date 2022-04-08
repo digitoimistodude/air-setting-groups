@@ -41,6 +41,10 @@ function get_prefix( $hyphens = false ) {
  * Gets custom settings array from theme settings.
  */
 function get_custom_setting_config( $post_ids = [] ) {
+  if ( ! defined( 'THEME_SETTINGS' ) ) {
+    return $post_ids;
+  }
+  
   if ( ! isset( THEME_SETTINGS['custom_settings'] ) ) {
     return $post_ids;
   }
