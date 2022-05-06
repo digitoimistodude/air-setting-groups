@@ -1,10 +1,5 @@
 <?php
 /**
- * @Author:		Elias Kautto
- * @Date:   		2022-01-26 10:56:18
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-02-01 14:40:51
- *
  * Plugin Name: Air setting groups
  * Description: Provides a way to store custom settings in CPT and receive those with field id and setting group key.
  * Plugin URI: https://dude.fi
@@ -14,6 +9,7 @@
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Network: false
+ * Text Domain: air_setting_groups
  *
  * @package air-setting-groups
  */
@@ -86,3 +82,11 @@ add_action( 'admin_init', __NAMESPACE__ . '\air_setting_groups_editor_support_fo
  * Get custom setting function
  */
 include plugin_dir_path( __FILE__ ) . '/get-setting.php';
+
+/**
+ * Load translations
+ */
+add_action( 'plugins_loaded', function() {
+  $plugin_path = '/air-setting-groups/languages/';
+  load_plugin_textdomain( get_prefix(), false, $plugin_path );
+} );
