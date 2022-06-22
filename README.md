@@ -12,7 +12,7 @@ Like this.
     'your-custom-setting' => [
       'id' => '{YOUR POST ID}',
       'title' => 'Your custom setting',
-      'block-editor' => true,
+      'block_editor' => true,
     ],
   ],
 ```
