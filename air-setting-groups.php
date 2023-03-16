@@ -48,6 +48,32 @@ function get_custom_setting_config( $post_ids = [] ) {
   return wp_parse_args( THEME_SETTINGS['custom_settings'], $post_ids );
 } // end get_custom_setting_config
 
+/**
+ * Get custom setting pages for a specific post id.
+ */
+function get_all_custom_setting_pages_for_key( $key ) {
+  $setting_group_posts = get_custom_setting_config();
+  $original_setting_post = null;
+
+  foreach ( $setting_group_posts as $group => $data ) {
+    if ( $key === $group ) {
+      $original_setting_post = $data['id'];
+    }
+  };
+
+  if ( ! function_exists( 'pll_get_post_translations' ) ) {
+    return [
+      $original_setting_post,
+    ];
+  }
+
+  if ( pll_is_translated_post_type( get_prefix( true ) ) ) {
+    $translations = pll_get_post_translations( $original_setting_post );
+    return $translations;
+  }
+
+  return [ $original_setting_post ];
+} // end get_all_custom_setting_pages_for_key
 
 /**
  * Add setting group CPT to polylang allow multilingual settings.

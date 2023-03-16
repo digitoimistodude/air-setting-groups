@@ -2,8 +2,8 @@
 /**
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 13:11:12
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-28 12:15:23
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-16 12:54:44
  *
  * @package air-setting-groups
  */
@@ -66,30 +66,3 @@ class ACF_Location_Custom_Settings extends \ACF_Location {
     return $choices;
   } // end get_values
 }
-
-/**
- * Get custom setting pages for a specific post id.
- */
-function get_all_custom_setting_pages_for_key( $key ) {
-  $setting_group_posts = get_custom_setting_config();
-  $original_setting_post = null;
-
-  foreach ( $setting_group_posts as $group => $data ) {
-    if ( $key === $group ) {
-      $original_setting_post = $data['id'];
-    }
-  };
-
-  if ( ! function_exists( 'pll_get_post_translations' ) ) {
-    return [
-      $original_setting_post,
-    ];
-  }
-
-  if ( pll_is_translated_post_type( get_prefix( true ) ) ) {
-    $translations = pll_get_post_translations( $original_setting_post );
-    return $translations;
-  }
-
-  return [ $original_setting_post ];
-} // end get_all_custom_setting_pages_for_key
