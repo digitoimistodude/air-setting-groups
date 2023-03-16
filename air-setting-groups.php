@@ -5,7 +5,7 @@
  * Plugin URI: https://dude.fi
  * Author: Digitoimisto Dude Oy
  * Author URI: https://dude.fi
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Network: false
@@ -19,7 +19,7 @@ namespace Air_Setting_Groups;
 defined( 'ABSPATH' ) || exit;
 
 function get_plugin_version() {
-  return 100;
+  return 101;
 } //end get_plugin_version
 
 function get_prefix( $hyphens = false ) {
