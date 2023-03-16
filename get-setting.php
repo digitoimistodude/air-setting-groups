@@ -2,8 +2,8 @@
 /**
  * @Author:		Elias Kautto
  * @Date:   		2022-01-27 15:12:31
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-01-27 16:06:38
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-16 12:56:34
  *
  * @package air-setting-groups
  */
@@ -15,9 +15,16 @@ function get_custom_setting( $key, $group ) {
     return false;
   }
 
-  $first_key = array_key_first( $post_ids );
-  $post_id = pll_get_post( $post_ids[ $first_key ] );
+  if ( ! function_exists( 'get_field' ) ) {
+    return false;
+  }
 
+  $first_key = array_key_first( $post_ids );
+  $post_id = $post_ids[ $first_key ];
+
+  if ( function_exists( 'pll_get_post' ) ) {
+    $post_id = pll_get_post( $post_id );
+  }
   $value = get_field( $key, $post_id );
 
   return $value;
