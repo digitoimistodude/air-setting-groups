@@ -2,8 +2,8 @@
 /**
  * @Author:		Elias Kautto
  * @Date:   		2022-01-26 11:19:51
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-03-02 11:22:21
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-12-01 12:03:30
  *
  * @package air-setting-groups
  */
@@ -12,7 +12,7 @@ namespace Air_Setting_Groups;
 
 function register_cpt() {
   $generated_labels = [
-    'menu_name'          => __( 'Setting groups', 'air_setting_groups' ),
+    'menu_name'          => __( 'Other content', 'air_setting_groups' ),
     'name'               => _x( 'Setting groups', 'post type general name', 'air_setting_groups' ),
     'singular_name'      => _x( 'Setting group', 'post type singular name', 'air_setting_groups' ),
     'name_admin_bar'     => _x( 'Setting groups', 'add new on admin bar', 'air_setting_groups' ),

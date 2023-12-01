@@ -5,7 +5,7 @@
  * Plugin URI: https://dude.fi
  * Author: Digitoimisto Dude Oy
  * Author URI: https://dude.fi
- * Version: 1.0.1
+ * Version: 1.0.2
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Network: false
@@ -40,7 +40,7 @@ function get_custom_setting_config( $post_ids = [] ) {
   if ( ! defined( 'THEME_SETTINGS' ) ) {
     return $post_ids;
   }
-  
+
   if ( ! isset( THEME_SETTINGS['custom_settings'] ) ) {
     return $post_ids;
   }
