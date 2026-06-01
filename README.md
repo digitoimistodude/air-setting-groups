@@ -12,12 +12,12 @@ Like this.
     'your-custom-setting' => [
       'id' => '{YOUR POST ID}',
       'title' => 'Your custom setting',
-      'block-editor' => true,
+      'block_editor' => true,
     ],
   ],
 ```
 
-If you set `block-editor` to `true`, your custom setting group will support the gutenberg block editor. If you dont want it enabled you can remove `block-editor` from the array or just change its value to something that doesnt evaluate to `true`.
+If you set `block_editor` to `true`, your custom setting group will support the gutenberg block editor. If you dont want it enabled you can remove `block_editor` from the array or just change its value to something that doesnt evaluate to `true`.
 
 Now that you have registered your custom setting group, you can find it in ACF field group location rules with the title that you gave to it.
 
