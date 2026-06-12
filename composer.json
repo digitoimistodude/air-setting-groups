@@ -8,7 +8,7 @@
     "plugin"
   ],
   "license": "GPL-3.0+",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "Elias Kautto",
@@ -22,3 +22,4 @@
     }
   ]
 }
+
